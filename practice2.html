@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Practice 2 - CSS Color Control</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .text {
+            font-size: 20px;
+            border: 2px solid black;
+            padding: 10px;
+            background-color: white;
+        }
+        label {
+            display: block; /* Makes labels block-level for better spacing */
+            margin-top: 10px;
+        }
+        input {
+            margin-bottom: 10px; /* Adds space below input fields */
+        }
+    </style>
+</head>
+<body>
+    <h1>Adjust Colors</h1>
+    <p class="text">Paragraph to be altered.</p>
+
+    <label for="borderR">Border R(0-255): </label>
+    <input type="text" id="borderR" placeholder="e.g., 255"><br>
+
+    <label for="borderG">Border G(0-255): </label>
+    <input type="text" id="borderG" placeholder="e.g., 255"><br>
+
+    <label for="borderB">Border B(0-255): </label>
+    <input type="text" id="borderB" placeholder="e.g., 255"><br>
+
+    <label for="borderWidth">Border Width(px): </label>
+    <input type="text" id="borderWidth" placeholder="e.g., 5"><br>
+
+    <label for="bgR">Background R(0-255): </label>
+    <input type="text" id="bgR" placeholder="e.g., 255"><br>
+
+    <label for="bgG">Background G(0-255): </label>
+    <input type="text" id="bgG" placeholder="e.g., 255"><br>
+
+    <label for="bgB">Background B(0-255): </label>
+    <input type="text" id="bgB" placeholder="e.g., 255"><br>
+
+    <button onclick="changeStyles()">Change Styles!</button>
+
+    <script>
+        function changeStyles() {
+            var borderR = document.getElementById('borderR').value;
+            var borderG = document.getElementById('borderG').value;
+            var borderB = document.getElementById('borderB').value;
+            var borderWidth = document.getElementById('borderWidth').value;
+
+            var textElement = document.querySelector('.text');
+            textElement.style.borderColor = `rgb(${borderR}, ${borderG}, ${borderB})`;
+            textElement.style.borderWidth = borderWidth + 'px';
+            textElement.style.borderStyle = 'solid';
+        }
+    </script>
+</body>
+</html>

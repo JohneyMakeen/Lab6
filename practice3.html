@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Practice 3 - Password Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        label {
+            display: block; /* Makes labels block-level for better spacing */
+            margin-top: 10px;
+        }
+        input {
+            margin-bottom: 10px; /* Adds space below input fields */
+        }
+    </style>
+</head>
+<body>
+    <h1>Password Verification</h1>
+    <label for="password1">First Password:</label>
+    <input type="password" id="password1" placeholder="Enter your password">
+
+    <label for="password2">Second Password:</label>
+    <input type="password" id="password2" placeholder="Re-enter your password">
+
+    <button onclick="validatePasswords()">Validate Your Passwords</button>
+
+    <script>
+        function validatePasswords() {
+            var password1 = document.getElementById('password1').value;
+            var password2 = document.getElementById('password2').value;
+
+            if (password1.length < 8) {
+                alert("Password must be at least 8 characters long.");
+            } else if (password1 !== password2) {
+                alert("Passwords do not match.");
+            } else {
+                alert("Passwords match!");
+            }
+        }
+    </script>
+</body>
+</html>
